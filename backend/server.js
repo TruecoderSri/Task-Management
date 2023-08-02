@@ -9,7 +9,7 @@ const db = require("./db");
 app.use(express.json());
 app.use(
   cors({
-    origin: ["https://task-management-sys.vercel.app/"],
+    origin: ["https://task-management-sys.vercel.app"],
     method: ["POST", "GET", "PUT", "DELETE"],
     credentials: true,
   })
