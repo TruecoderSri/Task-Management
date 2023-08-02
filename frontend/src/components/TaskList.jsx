@@ -16,7 +16,7 @@ const TaskList = ({ tasks, fetchTasks }) => {
 
   const handleSaveTask = async () => {
     try {
-      await axios.put(`https://taskback.azurewebsites.net/api/tasks/${editTask._id}`, {
+      await axios.put(`https://task-management-dnhz.vercel.app/api/tasks/${editTask._id}`, {
         title: editedTitle,
         description: editedDescription,
         completed: editedCompleted,
@@ -39,7 +39,7 @@ const TaskList = ({ tasks, fetchTasks }) => {
       );
 
       if (shouldDelete) {
-        await axios.delete(`https://taskback.azurewebsites.net/api/tasks/${taskId}`);
+        await axios.delete(`https://task-management-dnhz.vercel.app/api/tasks/${taskId}`);
         fetchTasks();
       }
     } catch (error) {
