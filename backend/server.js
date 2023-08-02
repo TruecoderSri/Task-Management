@@ -9,7 +9,7 @@ const db = require("./db");
 app.use(express.json());
 app.use(
   cors({
-    origin: ["https://deploy-mern-1whq.vercel.app"],
+    origin: ["https://task-management-dnhz.vercel.app/"],
     method: ["POST", "GET", "PUT", "DELETE"],
     credentials: true,
   })
