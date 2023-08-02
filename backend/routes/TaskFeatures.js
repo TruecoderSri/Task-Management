@@ -57,7 +57,7 @@ router.put(
       if (!errors.isEmpty()) {
         return res.status(400).json({ errors: errors.array() });
       }
-      const id = req.params.id;
+      const {id} = req.params;
       const { title, description, completed } = req.body;
       const UpdatedTask = await Task.findByIdAndUpdate(
         id,
@@ -84,7 +84,7 @@ router.put(
 
 router.delete("/tasks/:id", async (req, res) => {
   try {
-    const id = req.params.id;
+    const {id} = req.params;
     const deletedTask = await Task.findByIdAndDelete(id);
     if (!deletedTask) {
       return res.status(404).json({ message: "No such Task found" });
