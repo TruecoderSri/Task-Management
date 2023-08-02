@@ -1,82 +1,3 @@
-// // TaskForm.js
-
-// import React, { useState } from "react";
-// import axios from "axios";
-
-// const TaskForm = ({ fetchTasks }) => {
-//   const [showForm, setShowForm] = useState(false);
-//   const [title, setTitle] = useState("");
-//   const [description, setDescription] = useState("");
-//   const [completed, setcompleted] = useState(false);
-
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
-//     const newTask = {
-//       title: title,
-//       description: description,
-//       completed: completed,
-//     };
-
-//     try {
-//       await axios.post("http://localhost:5000/api/tasks", newTask);
-//       console.log("tasks added successfully");
-//       fetchTasks();
-//       setTitle("");
-//       setDescription("");
-//       setcompleted(false);
-//     } catch (error) {
-//       console.error("Error adding task:", error);
-//     }
-//   };
-
-//   return (
-//     <div>
-//       {showForm ? (
-//         <form onSubmit={handleSubmit}>
-//           <label>Title:</label>
-//           <input
-//             className="border-none bg-gray-100 h-auto"
-//             type="text"
-//             value={title}
-//             onChange={(e) => setTitle(e.target.value)}
-//             required
-//           />
-//           <label>Description:</label>
-//           <textarea
-//             value={description}
-//             onChange={(e) => setDescription(e.target.value)}
-//             required
-//           />
-//           <label>Status:</label>
-//           <input
-//             type="checkbox"
-//             checked={completed}
-//             onChange={() => setCompleted(!completed)}
-//           />
-//           <label>Completed</label>
-//           <button
-//             type="submit"
-//             className="border-none  ring-offset-2 ring-2 p-2 rounded-sm w-auto"
-//           >
-//             Add
-//           </button>
-//         </form>
-//       ) : (
-//         <button
-//           className={`border-2 border-blue-800 p-2 rounded-md bg-blue-400 font-bold opacity-${
-//             showForm ? 0 : 1
-//           }`}
-//           onClick={() => setShowForm(true)}
-//         >
-//           Add Task
-//         </button>
-//       )}
-//     </div>
-//   );
-// };
-
-// export default TaskForm;
-
 import React, { useState } from "react";
 import axios from "axios";
 
@@ -95,7 +16,7 @@ const TaskForm = ({ fetchTasks }) => {
     };
 
     try {
-      await axios.post("http://localhost:5000/api/tasks", newTask);
+      await axios.post("https://task-management-dnhz.vercel.app/api/tasks", newTask);
       console.log("Task added successfully");
       fetchTasks();
       setTitle("");
