@@ -16,7 +16,7 @@ const TaskForm = ({ fetchTasks }) => {
     };
 
     try {
-      await axios.post("https://task-management-dnhz.vercel.app/api/tasks", newTask);
+      await axios.post("https://taskback.azurewebsites.net/api/tasks", newTask);
       console.log("Task added successfully");
       fetchTasks();
       setTitle("");
